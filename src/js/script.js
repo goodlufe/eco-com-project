@@ -50,6 +50,27 @@ const database = {
       "description": "Для предварительной очистки воздуха в вентиляционных и кондиционирующих системах часто используют рулонные фильтры. Также применяются как первая ступень очистки в многоступенчатых системах.",
       "url": "../img/filters/roll-filter.jpeg"
     }
+  ],
+
+  "materials": [
+    {
+      "name": "Материалы для рукавных фильтров",
+      "description": "Помимо самих фильтров мы производим материалы для них. Наши материалы для рукавных фильтров являются одними из лучших на рынке в данный момент.",
+      "url": "../img/materials/sleeve-material.jpg"
+    },
+    {
+      "name": "Материалы для карманных фильтров",
+      "description": "Помимо самих фильтров мы производим материалы для них. Наши материалы для карманных фильтров являются одними из лучших на рынке в данный момент.",
+      "url": "../img/materials/pocket-material.jpg"
+    }
+  ],
+
+  "unknown": [
+    {
+      "name": "Указана ошибочная группа",
+      "description": "Укажите другую группу",
+      "url": "none"
+    }
   ]
 };
 
@@ -79,26 +100,44 @@ const createCard = (path, name, description) => {
 
 const showMore = document.querySelector(".catalog__show-more");
 const filtersList = document.querySelector(".catalog__list");
+const materialsList = document.querySelector(".materials__list");
 
-let filters = document.querySelectorAll(".filter");
+let filters = filtersList.querySelectorAll(".filter");
+let materials = materialsList.querySelectorAll(".material");
 
-const fillCard = (index) => {
-  let img = filters[index].querySelector(".filter__img");
-  let name = filters[index].querySelector(".filter__name");
-  let description = filters[index].querySelector(".filter__description");
+let filterType = "filter";
+let materialType = "material";
 
-  let databaseAsset = database.filters[index];
+const fillCard = (array, index, type) => {
+  let databaseAsset;
+  let img = array[index].querySelector(`.${type}__img`);
+  let name = array[index].querySelector(`.${type}__name`);
+  let description = array[index].querySelector(`.${type}__description`);
+
+  switch (type) {
+    case "filter":
+      databaseAsset = database.filters[index];
+      break;
+
+    case "material":
+      databaseAsset = database.materials[index];
+      break;
+
+    default:
+      databaseAsset = database.unknown;
+      break;
+  }
 
   img.src = databaseAsset.url;
   name.textContent = databaseAsset.name;
   description.textContent = databaseAsset.description;
 }
 
-const generateCards = () => {
+const generateCards = (array, type) => {
   let index = 0;
 
-  filters.forEach(element => {
-    fillCard(index);
+  array.forEach(element => {
+    fillCard(array, index, type);
     index++;
   });
 
@@ -111,7 +150,6 @@ const showMoreCards = () => {
 
   for (let i = showedCards; i < filtersLocal.length; i++) {
     filtersList.insertAdjacentHTML('beforeend', createCard(filtersLocal[i].url, filtersLocal[i].name, filtersLocal[i].description));
-
   }
 
   showMore.remove();
@@ -122,4 +160,5 @@ showMore.addEventListener('click', (evt) => {
   showMoreCards();
 });
 
-generateCards();
+generateCards(filters, filterType);
+generateCards(materials, materialType);
