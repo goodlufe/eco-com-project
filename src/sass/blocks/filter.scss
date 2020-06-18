@@ -1,0 +1,107 @@
+.filter {
+  display: flex;
+  width: 320px;
+  height: 200px;
+}
+
+.filter__content-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  transform-style: preserve-3d;
+  transform-origin: center;
+  transition: transform 2s;
+}
+
+.filter__front {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  backface-visibility: hidden;
+}
+
+.filter__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  object-fit: cover;
+  backface-visibility: hidden;
+}
+
+.filter__name {
+  @include reset;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 60px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  text-align: center;
+
+  background-color: $white;
+  backface-visibility: hidden;
+
+  span {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.filter__back {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  backface-visibility: hidden;
+  transform: rotatey(180deg)
+}
+
+.filter__description {
+  @include reset;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+  backface-visibility: hidden;
+  background-color: $white;
+
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+
+  span {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.filter:hover .filter__content-wrapper {
+  transform: rotateY(-180deg)
+}

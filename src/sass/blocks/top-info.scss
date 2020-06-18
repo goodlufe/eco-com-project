@@ -1,0 +1,120 @@
+.top-info__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-info__logo-link {
+  margin-top: 27px;
+  margin-left: 37px;
+}
+
+.top-info__intro {
+  @include reset;
+
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  color: $bright-green;
+
+  margin-top: 20px;
+  margin-left: 42px;
+
+  max-width: 450px;
+}
+
+.top-info__contacts {
+  background-color: $bright-blue;
+
+  padding-top: 26px;
+  padding-bottom: 42px;
+
+  margin-right: 0;
+  margin-left: auto;
+
+  max-width: 202px;
+
+  position: relative;
+
+  &::before {
+    content: "";
+
+    display: block;
+    height: 100%;
+    width: 85px;
+
+    position: absolute;
+    left: -85px;
+    top: 0;
+
+    background-image: linear-gradient(-63deg, rgba($bright-blue ,1) 35%, rgba( 255, 255, 255, 0) 35%, rgba(255, 255, 255, 0) 100%);
+    background-position: -75px -16px;
+    background-size: 200%;
+    background-repeat: no-repeat;
+  }
+}
+
+.top-info__phone {
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    background-color: $bright-green;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $white;
+
+    text-transform: uppercase;
+    text-align: center;
+
+    padding-top: 8px;
+    padding-bottom: 7px;
+
+    border-radius: 10px;
+
+    margin-left: 14px;
+    margin-right: 34px;
+
+    &--text {
+        font-size: 15px;
+        margin-top: -5px
+    }
+}
+
+.top-info__email {
+    text-decoration: none;
+
+    display: block;
+
+    position: relative;
+
+    text-align: right;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $white;
+
+    padding-right: 34px;
+
+    margin-top: 14px;
+
+    &::before {
+      content: "";
+
+      display: block;
+      width: 37px;
+      height: 27px;
+
+      position: absolute;
+      z-index: 5;
+      left: -30px;
+      top: 6px;
+
+      background-image: url("../img/icons/email.png");
+      background-position: center;
+      background-size: 37px 27px;
+      background-repeat: no-repeat;
+    }
+}

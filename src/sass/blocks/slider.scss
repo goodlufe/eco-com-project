@@ -1,0 +1,100 @@
+.slider {
+  background-color: $background-whitish;
+}
+
+.slider__body {
+  display: block;
+  width: 1000px;
+  height: 200px;
+
+  position: relative;
+
+  margin: 0 auto;
+}
+
+.slider__previous,
+.slider__next {
+  display: block;
+  width: 30px;
+  height: 30px;
+
+  background-color: $light-grayish;
+}
+
+.slider__previous {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -15px;
+
+  &::after {
+    content: "";
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-image: url("../img/icons/arrow.png");
+    background-size: 22px 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.slider__next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -15px;
+
+  &::after {
+    content: "";
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-image: url("../img/icons/arrow.png");
+    background-size: 22px 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: rotate(180deg);
+  }
+}
+
+.slider__controls {
+  display: flex;
+  position: absolute;
+  bottom: -13px;
+  left: -10px;
+  list-style: none;
+}
+
+.slider__control {
+  &:not(:first-child) {
+    margin-left: 3px;
+  }
+}
+
+.slider__control-link {
+  display: block;
+  width: 5px;
+  height: 5px;
+
+  background-color: $white;
+
+  border-radius: 50%;
+
+  &--inactive {
+    opacity: 0.4;
+  }
+}

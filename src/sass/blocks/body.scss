@@ -1,0 +1,14 @@
+.body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.body,
+.body__header,
+.body__main,
+.body__footer {
+    @include reset;
+}
+
+.body__main {
+  margin-top: -20px;
+}

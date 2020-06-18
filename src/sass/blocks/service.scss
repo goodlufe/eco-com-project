@@ -1,0 +1,73 @@
+.service {
+  max-width: 480px;
+  min-height: 290px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.service__heading {
+  @include reset;
+
+  position: relative;
+
+  min-height: 50px;
+
+  text-transform: uppercase;
+  padding-left: 21px;
+  padding-right: 10px;
+
+
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $dark-green;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 11px;
+    left: -2px;
+
+    display: block;
+    width: 22px;
+    height: 22px;
+
+    margin-top: -11px;
+
+    background-image: url("../../img/icons/triangle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 22px;
+  }
+}
+
+.service__description {
+  margin-top: 9px;
+  font-size: 16px;
+  line-height: 16px;
+  color: $dark-green;
+}
+
+.service__more {
+  max-width: 170px;
+  min-height: 50px;
+
+  margin-top: auto;
+  margin-bottom: 0;
+
+  text-decoration: none;
+
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 600;
+  color: $white;
+
+  background-color: $bright-green;
+
+  padding-top: 16px;
+  padding-left: 29px;
+
+  border-radius: 20px;
+}

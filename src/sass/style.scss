@@ -1,0 +1,29 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./font.scss";
+//utility blocks//
+@import "./blocks/visually-hidden.scss";
+@import "./blocks/wrapper.scss";
+//blocks//
+@import "./blocks/body.scss";
+//header//
+@import "./blocks/header.scss";
+@import "./blocks/top-info.scss";
+@import "./blocks/navigation.scss";
+//main//
+@import "./blocks/main.scss";
+@import "./blocks/slider.scss";
+@import "./blocks/catalog.scss";
+@import "./blocks/filter.scss";
+@import "./blocks/materials.scss";
+@import "./blocks/material.scss";
+@import "./blocks/services.scss";
+@import "./blocks/service.scss";
+@import "./blocks/learn-more.scss";
+//footer//
+@import "./blocks/footer.scss";
+@import "./blocks/bottom-info.scss";
+@import "./blocks/developed-by.scss";
+@import "./blocks/partner.scss";
+//general//
+@import "./general.scss";
